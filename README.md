@@ -1,3 +1,3 @@
-﻿# it is still the simple house price prediction. 
-﻿#im learning the basic of ML in this project im just trying to implementing what im learn from Data Science Project | Machine Learning Project | Real Estate Price Prediction playlist on YT 
+﻿house price prediction. 
+﻿im learning the basic of ML in this project im just trying to implementing what im learn from Data Science Project | Machine Learning Project | Real Estate Price Prediction playlist on YT 
 ﻿#cr codebasics YT channel
