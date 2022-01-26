@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.route('/hallo', methods=['GET']) 
 
-@app.route('/predict', methods=['POST'])
+def hallo():
+  return "Hallo"
+
+@app.route('/predict', methods=['GET','POST'])
 
 def predict():
   total_sqft = float(request.form['total_sqft'])
@@ -16,8 +19,17 @@ def predict():
   response.headers.add('Access-Control-Allow-Origin', '*')
   return response
 
-def getLocationName():
-  response = jsonify({'location': util.getLocationName()})  
+@app.route('/get_location_name', methods=['GET'])
+
+def get_location_name():
+  response = jsonify({
+    'location': util.get_location_name()
+  })  
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  return response
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  util.loadSavedArtifacts()
+  app.run()

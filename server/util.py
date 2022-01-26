@@ -19,7 +19,7 @@ def getEstimatedPrice(location, sqft, bath, bhk):
         x[loc_index] = 1
     return round(__model.predict([x])[0],2)
 
-def getLocationName():
+def get_location_name():
     return __location
 
 def loadSavedArtifacts():
@@ -28,7 +28,7 @@ def loadSavedArtifacts():
     global __dataColumns
     global __model
 
-    with open("columns.json", "r") as f:
+    with open("D:\Ready\Project\house_pred\house-pred-sc-yt\server\Artifacts\columns.json", "r") as f:
         __dataColumns = json.load(f)['data_columns']
         __location = __dataColumns[3:]
         # print("Loaded artfacts: " + str(__dataColumns))
@@ -41,7 +41,7 @@ def loadSavedArtifacts():
 
 if __name__ == '__main__':
     loadSavedArtifacts()
-    # print (getLocationName())
+    # print (get_location_name())
     
-    print(getEstimatedPrice('1st Phase JP Nagar', 1000, 3, 2))
-    print(getEstimatedPrice('kalhalli', 1000, 3, 2))
+    # print(getEstimatedPrice('1st Phase JP Nagar', 1000, 3, 2))
+    # print(getEstimatedPrice('kalhalli', 1000, 3, 2))
